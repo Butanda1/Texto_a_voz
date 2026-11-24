@@ -1,28 +1,35 @@
-# Texto a Voz (TTS) - Piper & Gradio
+# Texto a Voz (TTS) con Piper y Gradio
 
-Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir texto en audio `.wav` de manera ultrarrápida, sin límites de caracteres, completamente privada y sin necesidad de tarjeta gráfica dedicada (GPU).
+Aplicación web local desarrollada en Python utilizando **Gradio** y **Piper TTS** para la síntesis de texto a voz en formato `.wav`. Ejecuta la inferencia de manera local en CPU mediante modelos ONNX, sin depender de APIs externas ni requerir GPU dedicada.
 
 ---
 
-## Características
+## Funcionalidad
 
-- **Rápido y eficiente:** Utiliza el motor ONNX de Piper TTS, diseñado para sintetizar voz con alto rendimiento directamente en CPU.
-- **100% Local y Privado:** Sin llamadas a servicios externos en la nube, sin cuotas, suscripciones ni límites de caracteres.
-- 🇲**Voz en español:** Utiliza la voz `es_MX-ald-medium` (Español de México).
-- **Descarga automática:** Si el modelo no está presente, la aplicación lo descarga automáticamente desde Hugging Face al iniciar por primera vez.
-- **Interfaz Web Intuitiva:** Desarrollada con Gradio para escribir o pegar textos, generar el audio y escucharlo o descargarlo al instante.
-- **Guardado automático:** Almacena los audios generados en la carpeta `outputs/` con marca de tiempo.
+- **Síntesis local en CPU:** Emplea el motor ONNX de Piper TTS para generar audio directamente en el equipo local sin envío de datos a servicios externos.
+- **Modelo en español:** Configurado con el modelo acústico `es_MX-ald-medium` (español de México).
+- **Gestión automática del modelo:** Verifica al iniciar si los archivos `.onnx` y `.onnx.json` existen en `voces/`; en caso contrario, los descarga automáticamente desde Hugging Face.
+- **Interfaz web:** Permite ingresar texto, reproducir el resultado en el navegador y exportar el archivo generado mediante Gradio.
+- **Almacenamiento organizado:** Guarda cada archivo `.wav` en el directorio `outputs/` utilizando una marca de tiempo en el nombre para evitar sobrescrituras.
+
+---
+
+## Stack Tecnológico
+
+- **Lenguaje:** Python 3.10+
+- **Motor de síntesis:** Piper TTS (ONNX Runtime)
+- **Interfaz de usuario:** Gradio
 
 ---
 
 ## Requisitos Previos
 
-- Python 3.10 o superior (recomendado Python 3.11).
-- Un entorno virtual para gestionar las dependencias de forma aislada.
+- Python 3.10 o superior (probado en Python 3.11).
+- `pip` y soporte para entornos virtuales (`venv`).
 
 ---
 
-## Instalación y Uso
+## Instalación y Ejecución
 
 1. **Clonar el repositorio:**
    ```bash
@@ -30,13 +37,13 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
    cd Texto_a_voz
    ```
 
-2. **Crear y activar un entorno virtual:**
+2. **Crear y activar el entorno virtual:**
    ```bash
-   # En Linux / macOS
+   # Linux / macOS
    python3 -m venv .venv
    source .venv/bin/activate
 
-   # En Windows
+   # Windows
    python -m venv .venv
    .venv\Scripts\activate
    ```
@@ -46,13 +53,11 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
    pip install -r requirements.txt
    ```
 
-4. **Iniciar la aplicación:**
+4. **Ejecutar la aplicación:**
    ```bash
    python app.py
    ```
-   *(La primera vez descargará automáticamente el modelo de voz de ~60 MB si no existe en la carpeta `voces/`)*.
-
-   Abre en tu navegador la dirección local que aparece en la terminal (por defecto `http://127.0.0.1:7860`).
+   En la primera ejecución se descargarán los archivos del modelo de voz (~60 MB) dentro de `voces/`. Una vez iniciado el servidor, accede a la interfaz en `[http://127.0.0.1:7860](http://127.0.0.1:7860)`.
 
 ---
 
@@ -60,19 +65,17 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
 
 ```text
 Texto_a_voz/
-├── app.py                     # Aplicación principal con la interfaz de Gradio
-├── requirements.txt           # Dependencias necesarias (piper-tts, gradio)
-├── .gitignore                 # Archivos ignorados por Git (incluye modelos .onnx)
-├── README.md                  # Documentación del proyecto
-├── voces/                     # Modelos de voz (descargados automáticamente)
-│   ├── .gitkeep
-│   ├── es_MX-ald-medium.onnx
-│   └── es_MX-ald-medium.onnx.json
-└── outputs/                   # Audios WAV generados (creado automáticamente)
+├── app.py                     # Lógica de síntesis e interfaz web en Gradio
+├── requirements.txt           # Dependencias del proyecto (piper-tts, gradio)
+├── .gitignore                 # Exclusión de entorno virtual, audios y modelos .onnx
+├── README.md                  # Documentación
+├── voces/                     # Directorio para modelos ONNX (descarga automática)
+│   └── .gitkeep
+└── outputs/                   # Directorio de salida para archivos .wav generados
 ```
 
 ---
 
 ## Licencia
 
-Este proyecto está bajo la Licencia MIT.
+Distribuido bajo la Licencia MIT.
