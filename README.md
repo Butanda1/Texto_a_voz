@@ -1,28 +1,28 @@
-# 🎙️ Texto a Voz (TTS) - Piper & Gradio
+# Texto a Voz (TTS) - Piper & Gradio
 
 Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir texto en audio `.wav` de manera ultrarrápida, sin límites de caracteres, completamente privada y sin necesidad de tarjeta gráfica dedicada (GPU).
 
 ---
 
-## ✨ Características
+## Características
 
-- ⚡ **Rápido y eficiente:** Utiliza el motor ONNX de Piper TTS, diseñado para sintetizar voz con alto rendimiento directamente en CPU.
-- 🔒 **100% Local y Privado:** Sin llamadas a servicios externos en la nube, sin cuotas, suscripciones ni límites de caracteres.
-- 🇲🇽 **Voz en español:** Utiliza la voz `es_MX-ald-medium` (Español de México).
-- 📥 **Descarga automática:** Si el modelo no está presente, la aplicación lo descarga automáticamente desde Hugging Face al iniciar por primera vez.
-- 🖥️ **Interfaz Web Intuitiva:** Desarrollada con Gradio para escribir o pegar textos, generar el audio y escucharlo o descargarlo al instante.
-- 💾 **Guardado automático:** Almacena los audios generados en la carpeta `outputs/` con marca de tiempo.
+- **Rápido y eficiente:** Utiliza el motor ONNX de Piper TTS, diseñado para sintetizar voz con alto rendimiento directamente en CPU.
+- **100% Local y Privado:** Sin llamadas a servicios externos en la nube, sin cuotas, suscripciones ni límites de caracteres.
+- 🇲**Voz en español:** Utiliza la voz `es_MX-ald-medium` (Español de México).
+- **Descarga automática:** Si el modelo no está presente, la aplicación lo descarga automáticamente desde Hugging Face al iniciar por primera vez.
+- **Interfaz Web Intuitiva:** Desarrollada con Gradio para escribir o pegar textos, generar el audio y escucharlo o descargarlo al instante.
+- **Guardado automático:** Almacena los audios generados en la carpeta `outputs/` con marca de tiempo.
 
 ---
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 - Python 3.10 o superior (recomendado Python 3.11).
 - Un entorno virtual para gestionar las dependencias de forma aislada.
 
 ---
 
-## 🚀 Instalación y Uso
+## Instalación y Uso
 
 1. **Clonar el repositorio:**
    ```bash
@@ -56,7 +56,7 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 Texto_a_voz/
@@ -73,6 +73,6 @@ Texto_a_voz/
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT.
