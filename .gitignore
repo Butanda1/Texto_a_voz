@@ -11,6 +11,11 @@ env/
 ENV/
 .venv/
 
+# Modelos de voz (descargados automáticamente)
+voces/*.onnx
+voces/*.onnx.json
+!voces/.gitkeep
+
 # Archivos de salida de audio generados
 outputs/
 *.wav
