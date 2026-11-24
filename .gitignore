@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv/
+
+# Archivos de salida de audio generados
+outputs/
+*.wav
+
+# Gradio cache
+.gradio/
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
