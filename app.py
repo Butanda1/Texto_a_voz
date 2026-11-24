@@ -56,7 +56,7 @@ def generar(texto):
 
 # Interfaz visual con Gradio
 with gr.Blocks(title="Texto a Voz - Piper TTS") as demo:
-    gr.Markdown("# 🎙️ Piper TTS: Texto a Voz")
+    gr.Markdown("# Piper TTS: Texto a Voz")
     gr.Markdown("Convierte texto a audio WAV de forma local, rápida y sin límites.")
     
     with gr.Row():
