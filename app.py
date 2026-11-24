@@ -16,7 +16,7 @@ def generar(texto):
     voice = PiperVoice.load(MODEL, config_path=CONFIG)
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = f"outputs/reddit_libre_{timestamp}.wav"
+    output_path = f"outputs/Audio_{timestamp}.wav"
     
     # Crear carpeta de salida si no existe
     if not os.path.exists("outputs"): os.makedirs("outputs")

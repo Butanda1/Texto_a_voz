@@ -1,38 +1,43 @@
-# 🎙️ Reddit TTS - Piper (Rápido y Ligero)
+# Texto a Voz (TTS) - Piper & Gradio
 
-Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir historias y posts de Reddit (o cualquier texto largo) en audio `.wav` de manera ultrarrápida, sin límites de tokens y sin necesidad de tarjeta gráfica (GPU).
-
----
-
-## ✨ Características
-
-- ⚡ **Rápido y eficiente:** Utiliza el motor ONNX de Piper TTS, diseñado para sintetizar audio rápidamente incluso en CPUs modestas.
-- 🆓 **100% Abierto y Local:** Sin llamadas a APIs externas, sin cuotas ni límites de caracteres.
-- 🇲🇽 **Voz en español:** Incluye por defecto la voz `es_MX-ald-medium` (Español México).
-- 🖥️ **Interfaz Web Sencilla:** Creada con Gradio para generar y reproducir audios directamente en el navegador.
+Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir texto en audio `.wav` de manera ultrarrápida, sin límites de caracteres, completamente privada y sin necesidad de tarjeta gráfica dedicada (GPU).
 
 ---
 
-## 📋 Requisitos Previos
+## Características
 
-- Python 3.9 o superior.
-- Recomendado crear un entorno virtual para no afectar otras instalaciones de Python.
+- **Rápido y eficiente:** Utiliza el motor ONNX de Piper TTS, diseñado para sintetizar voz con alto rendimiento directamente en CPU.
+- **100% Local y Privado:** Sin llamadas a servicios externos en la nube, sin cuotas, suscripciones ni límites de caracteres.
+- **Voz en español:** Incluye por defecto la voz `es_MX-ald-medium` (Español de México).
+- **Interfaz Web Intuitiva:** Desarrollada con Gradio para escribir o pegar textos, generar el audio y escucharlo o descargarlo al instante.
+- **Guardado automático:** Almacena los audios generados en la carpeta `outputs/` con marca de tiempo.
 
 ---
 
-## 🚀 Instalación y Uso
+## Requisitos Previos
+
+- Python 3.10 o superior (recomendado Python 3.11).
+- Un entorno virtual para gestionar las dependencias de forma aislada.
+
+---
+
+## Instalación y Uso
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/TU_USUARIO/reddit_tts_piper.git
-   cd reddit_tts_piper
+   git clone https://github.com/Butanda1/Texto_a_voz.git
+   cd Texto_a_voz
    ```
 
 2. **Crear y activar un entorno virtual:**
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # En Linux/Mac
-   # En Windows: venv\Scripts\activate
+   # En Linux / macOS
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+   # En Windows
+   python -m venv .venv
+   .venv\Scripts\activate
    ```
 
 3. **Instalar dependencias:**
@@ -41,7 +46,7 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
    ```
 
 4. **Verificar el modelo de voz:**
-   Asegúrate de que los archivos del modelo estén presentes en la carpeta `voces/`:
+   Asegúrate de que los archivos del modelo estén presentes en el directorio `voces/`:
    - `voces/es_MX-ald-medium.onnx`
    - `voces/es_MX-ald-medium.onnx.json`
 
@@ -49,26 +54,26 @@ Aplicación web local desarrollada con **Gradio** y **Piper TTS** para convertir
    ```bash
    python app.py
    ```
-   Abre en tu navegador la URL que muestra la terminal (por defecto `http://127.0.0.1:7860`).
+   Abre en tu navegador la dirección local que aparece en la terminal (por defecto `http://127.0.0.1:7860`).
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
-reddit_tts_piper/
-├── app.py                     # Script principal con la interfaz Gradio
+Texto_a_voz/
+├── app.py                     # Aplicación principal con la interfaz de Gradio
 ├── requirements.txt           # Dependencias necesarias (piper-tts, gradio)
-├── .gitignore                 # Archivos ignorados por Git
-├── README.md                  # Documentación
-├── voces/                     # Modelos ONNX de Piper
+├── .gitignore                 # Archivos y carpetas ignorados por Git
+├── README.md                  # Documentación del proyecto
+├── voces/                     # Modelos ONNX de voz de Piper
 │   ├── es_MX-ald-medium.onnx
 │   └── es_MX-ald-medium.onnx.json
-└── outputs/                   # Audios generados (creado automáticamente)
+└── outputs/                   # Audios WAV generados (creado automáticamente)
 ```
 
 ---
 
-## 📄 Licencia
+## Licencia
 
-El código de esta aplicación está bajo la licencia MIT.
+Este proyecto está bajo la Licencia MIT.
